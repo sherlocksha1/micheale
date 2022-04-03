@@ -67,7 +67,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "JOIN CHANNEL", url=invite_link.invite_link
                 )
             ]
         ]
@@ -78,7 +78,7 @@ async def start(client, message):
             btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**",
+            text="**നിങ്ങൾക്ക് സിനിമ കിട്ടണമെങ്കിൽ താഴെക്കാണുന്ന JOIN CHANNEL എന്നത് ക്ലിക്ക് ചെയ്ത് Join ചെയ്ത് തിരികെ വന്ന് 🔄 Try Again കൊടുത്ത ശേഷം സിനിമ കിട്ടുന്നതാണ്💯**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
