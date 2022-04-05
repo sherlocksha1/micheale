@@ -54,8 +54,21 @@
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
             "required": true
         },
+        "CACHE_TIME": {
+            "description": "The maximum amount of time in seconds that the result of the inline query may be cached on the server",
+            "value": "300",
+            "required": false            
+        },
         "UPSTREAM_REPO": {
             "description": " Your repo",
+            "required": false  
+        },
+        "MAX_LIST_ELM": {
+            "description": " the view of elements ",
+            "required": false   
+        },
+        "SINGLE_BUTTON": {
+            "description": "choose b/w single or double buttons https://github.com/EvamariaTG/EvaMaria/issues/22",
             "required": false            
         },
         "AUTH_USERS": {
