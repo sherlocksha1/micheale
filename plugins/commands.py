@@ -238,8 +238,8 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
     buttons = [[
-            InlineKeyboardButton('🎭 𝐆𝐫𝐨𝐮𝐩', url='https://t.me/UrvashiTheaters'),
-            InlineKeyboardButton('𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🎭', url='https://t.me/Movies_Club_2019')
+            InlineKeyboardButton('🎭 𝐆𝐫𝐨𝐮𝐩', url='https://t.me/new_movies_group_2021'),
+            InlineKeyboardButton('𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🎭', url='https://t.me/new_all_movies_club')
         ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
