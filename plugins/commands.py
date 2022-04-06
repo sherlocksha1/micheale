@@ -237,9 +237,14 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
+    buttons = [[
+            InlineKeyboardButton('🎭 𝐆𝐫𝐨𝐮𝐩', url='https://t.me/UrvashiTheaters'),
+            InlineKeyboardButton('𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🎭', url='https://t.me/Movies_Club_2019')
+        ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
+        reply_markup=InlineKeyboardMarkup(buttons),
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
