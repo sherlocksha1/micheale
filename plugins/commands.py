@@ -44,11 +44,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('📽CHANNEL', url='https://t.me/new_movies_club_2021'),
-            InlineKeyboardButton('🎥GROUP', url='https://t.me/new_movies_group_2021')
+            InlineKeyboardButton('🎭𝗖𝗵𝗮𝗻𝗻𝗲𝗹🎭', url='https://t.me/new_movies_club_2021'),
+            InlineKeyboardButton('🎭𝗚𝗿𝗼𝘂𝗽🎭', url='https://t.me/movies_club_2018')
             ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('⚡𝗛𝗲𝗹𝗽⚡', callback_data='help'),
+            InlineKeyboardButton('🌿𝗔𝗯𝗼𝘂𝘁🌿', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
