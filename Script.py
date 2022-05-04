@@ -19,7 +19,7 @@ class script(object):
 - Source Creditor - <a href=https://t.me/peter_parker_10>𝗣𝗘𝗧𝗘𝗥 𝗣𝗔𝗥𝗞𝗘𝗥</a>   
 
 <b>Source ആവിശ്യം ഉള്ളവർ Contact ചെയ്യുക</b>
-- <<a href=https://t.me/peter_parker_10>𝗖𝗼𝗻𝘁𝗮𝗰𝘁📞</a>"""
+- <a href=https://t.me/peter_parker_10>𝗖𝗼𝗻𝘁𝗮𝗰𝘁📞</a>"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and EvaMaria will respond whenever a keyword is found the message
