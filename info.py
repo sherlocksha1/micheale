@@ -10,6 +10,15 @@ def is_enabled(value, default):
     else:
         return default
 
+def redirected_env(value):
+    value = str(value)
+    if value.lower() in ['chat', 'group', 'channel', 'supergroup', 'true']:
+        return 'Chat'
+    elif value.lower() in ['user', '0', 'pm', 'personal', 'bot', 'bot pm', 'false']:
+        return 'PM'
+    else:
+        return 'Chat'
+
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ['API_ID'])
@@ -58,7 +67,6 @@ DELETE_TIME = int(environ.get('DELETE_TIME', 300))
 START_IMAGE_URL = environ.get('START_IMAGE_URL', "")
 UNAUTHORIZED_CALLBACK_TEXT = (environ.get('UNAUTHORIZED_CALLBACK_TEXT', "𝙏𝙃𝙄𝙎 𝙄𝙎 𝙉𝙊𝙏 𝙂𝙐𝘿 𝘿𝙐𝘿𝙀"))[:200]
 REDIRECT_TO = (environ.get('REDIRECT_TO', 0))
-REDIRECTED_ENV =(environ.get('REDIRECTED_ENV', 0))
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
