@@ -1108,30 +1108,22 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         cap = f"👮‍♂ ɴᴏᴛɪᴄᴇ :ɪ𝙵 ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ 𝙵ɪʟᴇ𝚂 ᴏ𝙵 ᴛʜɪ𝚂 ᴍᴏᴠɪᴇ ʏᴏᴜ ᴀ𝚂ᴋᴇᴅ 𝙵ᴏʀ. ʟᴏᴏᴋ ᴀᴛ ɴᴇ𝚇ᴛ ᴘᴀɢᴇ🔎\n©️քօաɛʀɛɖ ɮʏ :{message.chat.title}"
     if imdb and imdb.get('poster'):
         try:
-            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(5)
-            await hehe.delete()
-            await message.delete()
+            fmsg = await message.reply_text(text=cap[:1024],
+                                      reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(5)
-            await hmm.delete()
-            await message.delete()
+            fmsg = await message.reply_text(text=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(5)
-            await fek.delete()
-            await msg.delete()
+            fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        fuk = await message.reply_photo(photo="https://telegra.ph/file/8b42f6caf6ef5fd76766f.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(5)
-        await fuk.delete()
-        await msg.delete()
+        fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
-        await msg.message.delete()
+        await msg.message.delete() 
+  
+    await asyncio.sleep(60)
+    await fmsg.delete()
 
 
 async def advantage_spell_chok(msg):
